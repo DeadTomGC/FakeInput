@@ -1,0 +1,25 @@
+﻿Build started 6/23/2014 1:28:39 PM.
+     1>Project "c:\Users\Chris\documents\visual studio 2010\Projects\FakeInputWin\FakeInputWin\FakeInputWin.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Release\FakeInputWin.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Release\FakeInputWin.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D FAKEINPUTWIN_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt fakeIn.cpp
+         fakeIn.cpp
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\chris\documents\visual studio 2010\Projects\FakeInputWin\Release\FakeInputWin.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\FakeInputWin.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\chris\documents\visual studio 2010\Projects\FakeInputWin\Release\FakeInputWin.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\chris\documents\visual studio 2010\Projects\FakeInputWin\Release\FakeInputWin.lib" /MACHINE:X86 /DLL Release\fakeIn.obj
+            Creating library c:\users\chris\documents\visual studio 2010\Projects\FakeInputWin\Release\FakeInputWin.lib and object c:\users\chris\documents\visual studio 2010\Projects\FakeInputWin\Release\FakeInputWin.exp
+         Generating code
+         Finished generating code
+         FakeInputWin.vcxproj -> c:\users\chris\documents\visual studio 2010\Projects\FakeInputWin\Release\FakeInputWin.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"c:\users\chris\documents\visual studio 2010\Projects\FakeInputWin\Release\FakeInputWin.dll;#2" /manifest Release\FakeInputWin.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\FakeInputWin.unsuccessfulbuild".
+         Touching "Release\FakeInputWin.lastbuildstate".
+     1>Done Building Project "c:\Users\Chris\documents\visual studio 2010\Projects\FakeInputWin\FakeInputWin\FakeInputWin.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.36
