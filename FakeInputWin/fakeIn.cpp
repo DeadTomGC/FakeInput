@@ -1,9 +1,7 @@
-/*******************************************************************************
-*                                                                              *
-*   PrimeSense NiTE 2.0 - Simple Skeleton Sample                               *
-*   Copyright (C) 2012 PrimeSense Ltd.                                         *
-*                                                                              *
-*******************************************************************************/
+/*
+simulates keyboard input into the BaldiSync window and activates the Text-To-Speech part of that program
+Author: Chris Garman at Lehigh University
+*/
 
 
 
@@ -33,7 +31,7 @@ extern "C"{
 		ip.ki.time = 0;
 		ip.ki.dwExtraInfo = 0;
 	
-		HWND hWnd = ::FindWindow(NULL, L"bsync - Baldi with natural speech");
+		HWND hWnd = ::FindWindow(NULL, L"bsync - Baldi with natural speech"); //must specify the window name to switch to for typing here
 		if (hWnd) {
 			//sets the focus to the baldi sync window (have cursor in textbox for tts)
 			::SetForegroundWindow(hWnd);
@@ -43,12 +41,10 @@ extern "C"{
 
 		std::string str;
 
+		//selects a voice to use, don't need these if you just want the default voice
 		std::string startTags = "<SABLE><SPEAKER NAME='mwm2tll'> "; //mwm2tll is an english female voice
 		std::string endTags = " </SPEAKER></SABLE>";
-		//Sleep(3000);
 
-
-		//Sleep(3000);
 
 		//sends start tags
 		for(int i = 0; (unsigned int)i < startTags.size(); i++){
@@ -65,11 +61,11 @@ extern "C"{
 				SendInput(1, &ip, sizeof(INPUT));
 			
 				ip.ki.wVk = startTags[i]; 
-				ip.ki.dwFlags = KEYEVENTF_KEYUP; 
+				ip.ki.dwFlags = KEYEVENTF_KEYUP; //key release
 				SendInput(1, &ip, sizeof(INPUT));
 			
 				ip.ki.wVk = VK_SHIFT; 
-				ip.ki.dwFlags = KEYEVENTF_KEYUP; 
+				ip.ki.dwFlags = KEYEVENTF_KEYUP; //key release
 				SendInput(1, &ip, sizeof(INPUT));
 
 			}
@@ -101,7 +97,7 @@ extern "C"{
 				SendInput(1, &ip, sizeof(INPUT));
 			}
 			else if(startTags[i] == '>'){
-			
+				//key sequence to simulate >
 				ip.ki.wVk = VK_SHIFT; 
 				ip.ki.dwFlags = 0; //0 for key press
 				SendInput(1, &ip, sizeof(INPUT));
@@ -121,7 +117,7 @@ extern "C"{
 			}
 			 else{
 				 if(startTags[i] == '\''){
-					//everything in single quotes needs to be lower case or
+					//everything in single quotes needs to be lower case for
 					//the number for voice selection to be correct
 			
 					ip.ki.wVk = VK_OEM_7; //For the US standard keyboard, the 'single-quote/double-quote' key 
@@ -156,7 +152,7 @@ extern "C"{
 					SendInput(1, &ip, sizeof(INPUT));
 				 }
 				 else{
-					////sends all other characters besides alphas and >
+					//sends all other characters besides alphas and >
 
 					ip.ki.wVk = toupper(startTags[i]); 
 					ip.ki.dwFlags = 0; //0 for key press
